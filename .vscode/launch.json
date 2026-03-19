@@ -1,0 +1,31 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // #region Go Debug
+    {
+      "name": "GoAttachDebug",
+      "type": "go",
+      // 这种模式需要构建的二进制文件包含调试信息，构建命令如下：
+      // go build -gcflags "all=-N -l" -o go-demo main
+      "request": "attach",
+      "mode": "local",
+      // 开始调试时，会弹出一个下拉框让用户选择要调试的进程
+      "processId": 0
+    },
+    {
+      "name": "GoLaunchDebug",
+      "type": "go",
+      "request": "launch",
+      "mode": "auto",
+      "program": "${workspaceFolder}/go/main.go",
+      "args": [""],
+      "env": {
+        "GO_ENV": "dev"
+      }
+    }
+    // endregion
+  ]
+}
